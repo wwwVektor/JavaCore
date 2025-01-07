@@ -2,10 +2,10 @@ package homeworks.homework05Addition;
 
 import java.util.*;
 
-public class AppNew {
+public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        List<TelevisionNew> televisions = new ArrayList<>();
+        List<Television> televisions = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
             System.out.println("Введите информацию о телевизоре №" + (i + 1) + ":");
@@ -26,20 +26,20 @@ public class AppNew {
             scanner.nextLine();
 
             System.out.print("Включен или нет (да/нет): ");
-            boolean televisionOnOrOff = scanner.nextLine().equalsIgnoreCase("да");
+            boolean isOn = scanner.nextLine().equalsIgnoreCase("да");
 
-            TelevisionNew tv = new TelevisionNew(brand, diagonal, channelNumber, volume, televisionOnOrOff);
+            Television tv = new Television(brand, diagonal, channelNumber, volume, isOn);
             televisions.add(tv);
         }
 
         System.out.print("\nВведите максимальное допустимое значение громкости (рекомендуется от 50 до 70): ");
         int maxVolume = scanner.nextInt();
 
-        televisions.sort(Comparator.comparing(TelevisionNew::getNumberChannel));
+        televisions.sort(Comparator.comparing(Television::getNumberChannel));
 
         System.out.println("\nВключённые телевизоры с допустимой громкостью:");
-        for (TelevisionNew tv : televisions) {
-            if (tv.getTelevisionOnOrOff() && tv.getVolume() <= maxVolume) {
+        for (Television tv : televisions) {
+            if (tv.getOn() && tv.getVolume() <= maxVolume) {
                 System.out.println(tv);
                 System.out.println("----------------------");
             }
