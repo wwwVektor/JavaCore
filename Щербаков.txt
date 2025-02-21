@@ -1,0 +1,2 @@
+Person{lastName='Щербаков', firstName='Виктор', middleName='Сергеевич', birthDate=1990-09-06, phoneNumber=89872655555, gender=f, age=35}
+Person{lastName='Щербаков', firstName='Виктор', middleName='Сергеевич', birthDate=1990-09-06, phoneNumber=89872655555, gender=f, age=34}
